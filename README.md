@@ -63,54 +63,6 @@ But are Vine reviews truly trustworthy? Your task is to investigate whether Vine
 
 - - -
 
-## Hints and Considerations
-
-* Start each notebook with the following code in the first cell, and be sure to update the Spark version.
-
-```python
-import os
-# Find the latest version of spark 3.2  from http://www.apache.org/dist/spark/ and enter as the spark version
-# For example:
-# spark_version = 'spark-3.2.2'
-spark_version = 'spark-3.<spark version>'
-os.environ['SPARK_VERSION']=spark_version
-
-# Install Spark and Java
-!apt-get update
-!apt-get install openjdk-11-jdk-headless -qq > /dev/null
-!wget -q http://www.apache.org/dist/spark/$SPARK_VERSION/$SPARK_VERSION-bin-hadoop2.7.tgz
-!tar xf $SPARK_VERSION-bin-hadoop2.7.tgz
-!pip install -q findspark
-
-# Set Environment Variables
-import os
-os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
-os.environ["SPARK_HOME"] = f"/content/{spark_version}-bin-hadoop2.7"
-
-# Start a SparkSession
-import findspark
-findspark.init()
-```
-
-* For connection to Postgres, run the following code in the next cell.
-
-```python
-!wget https://jdbc.postgresql.org/download/postgresql-42.2.9.jar
-```
-
-- - -
-
-## Submission
-
-* **Important**: You must clean up all your AWS resources. Consult the [AWS cleanup guide](../Resources/AWS_cleanup.pdf) and [AWS check billing guide](../Resources/AWS_check_billing.pdf) as reference.
-
-* Download your Google Colab notebooks as `.ipynb` files and upload those to GitHub.
-
-* Copy your SQL queries into `.sql` files and upload them to GitHub.
-
-* **Important:** Do not upload notebooks that contain your RDS password and endpoint. Delete these two items before making your notebook public!
-
-* Ensure your repository has regular commits and a thorough README.md file
 
 ## Rubric
 
